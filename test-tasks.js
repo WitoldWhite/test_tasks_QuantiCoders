@@ -75,9 +75,7 @@ function selectEmployees(budget) {
     return false;
   };
   return employees
-    .map((employee) =>
-      addKeyAndValueToObj("cost", getTotalPrice(employee.drinks), employee)
-    )
+    .map((employee) => addKeyAndValueToObj("cost", getTotalPrice(employee.drinks), employee))
     .sort((a, b) => a.cost - b.cost)
     .filter((candidate) => checkBudget(candidate))
     .sort((a, b) => a.id - b.id);
